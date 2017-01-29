@@ -1,3 +1,4 @@
+import Foundation
 
 public class Fibonacci {
 	
@@ -10,7 +11,6 @@ public class Fibonacci {
 		}
 
 		return atN(n - 1) + atN(n - 2)
-
 	}
 
 	public func atNBetter(_ n: Int) -> Int {
