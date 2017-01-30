@@ -4,6 +4,7 @@ public class Fibonacci {
 	
 	var elements = [0, 1]
 
+	//recursive
 	public func atN(_ n: Int) -> Int {
 
 		if(n < 2) {
@@ -13,6 +14,7 @@ public class Fibonacci {
 		return atN(n - 1) + atN(n - 2)
 	}
 
+	//bottom up
 	public func atNBetter(_ n: Int) -> Int {
 		if(n < 2) {
 			return elements[n]

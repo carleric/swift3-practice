@@ -58,4 +58,34 @@ class BinaryTree: Tree {
 			preOrder(current.right, ordered:&ordered)
 		}
 	}
+
+	func inOrderVisit() -> [Int] {
+		var ordered = [Int]()
+		self.inOrder(self.root, ordered:&ordered)
+		return ordered
+	}
+
+	func inOrder(_ node: BinaryTreeNode?, ordered: inout [Int]) {
+		if let current = node {
+			inOrder(current.left, ordered:&ordered)
+			print("\(current.data)")
+			ordered.append(current.data)
+			inOrder(current.right, ordered:&ordered)
+		}
+	}
+
+	func postOrderVisit() -> [Int] {
+		var ordered = [Int]()
+		self.postOrder(self.root, ordered:&ordered)
+		return ordered
+	}
+
+	func postOrder(_ node: BinaryTreeNode?, ordered: inout [Int]) {
+		if let current = node {
+			postOrder(current.left, ordered:&ordered)
+			postOrder(current.right, ordered:&ordered)
+			print("\(current.data)")
+			ordered.append(current.data)
+		}
+	}
 }

@@ -28,4 +28,22 @@ class BinaryTreeTests: XCTestCase {
 		XCTAssert(ordered[3] == 7)
 		XCTAssert(ordered[4] == 10)
 	}
+
+	func testInOrder() {
+		let ordered = self.binaryTree.inOrderVisit()
+		XCTAssert(ordered[0] == 3)
+		XCTAssert(ordered[1] == 4)
+		XCTAssert(ordered[2] == 5)
+		XCTAssert(ordered[3] == 7)
+		XCTAssert(ordered[4] == 10)
+	}
+
+	func testPostOrder() {
+		let ordered = self.binaryTree.postOrderVisit()
+		XCTAssert(ordered[0] == 4)
+		XCTAssert(ordered[1] == 3)
+		XCTAssert(ordered[2] == 10)
+		XCTAssert(ordered[3] == 7)
+		XCTAssert(ordered[4] == 5)
+	}
 }
