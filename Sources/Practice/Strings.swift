@@ -2,7 +2,7 @@
 import Foundation
 
 public class Strings {
-	
+
 	public func getAnagramsIn(strings: [String]) -> [String] {
 		var anagrams = [String]()
 		for string in strings {
@@ -14,13 +14,13 @@ public class Strings {
 					break
 				}
 				//success case, pointers have reached the middle
-				if ( ( (string.characters.count % 2 == 0) && 
+				if ( ( (string.count % 2 == 0) &&
 					 (leftIndex == string.index(before:rightIndex)) )
-				   || ( (string.characters.count % 2 != 0) && 
+				   || ( (string.count % 2 != 0) &&
 					 (rightIndex == string.index(leftIndex, offsetBy:2)) ))
 				{
 					anagrams.append(string)
-					break 
+					break
 				}
 				//increment pointers towards center
 				leftIndex = string.index(after:leftIndex)
