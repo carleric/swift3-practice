@@ -220,9 +220,9 @@ class Arrays {
 	        for index in 0..<matrix.count
 	        {
 	            var row = matrix[index]
-							var item = row[row.count - 1]
+                let item = row[row.count - 1]
 	            print(item)
-							outArray.append(item)
+                outArray.append(item)
 	            row.remove(at: row.count - 1)
 	            matrix[index] = row
 	        }
@@ -240,9 +240,9 @@ class Arrays {
 	        for index in stride(from: matrix.count - 1, through: 0, by: -1)
 	        {
 	            var row = matrix[index]
-							var item = row[0]
+                let item = row[0]
 	            print(item)
-							outArray.append(item)
+                outArray.append(item)
 	            row.remove(at: 0)
 	            matrix[index] = row
 	        }

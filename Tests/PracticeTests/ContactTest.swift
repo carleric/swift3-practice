@@ -1,9 +1,10 @@
 import XCTest
 @testable import Practice
 
-class ContactTests: XCTestCase {
-  var contact : Contact!
-  var contact2 : Contact!
+class ContactTests: XCTestCase
+{
+  var contact: Contact!
+  var contact2: Contact!
 
   override func setUp() {
     super.setUp()
@@ -11,17 +12,21 @@ class ContactTests: XCTestCase {
     self.contact2 = Contact(firstName:"Bob", middleName:"Edward", lastName:"Lewis")
   }
 
-  func testIsReferenceType() {
-    let temp = self.contact
-    temp!.age = 42
-    XCTAssert(contact.age == 42)
+  func testIsNotReferenceType() {
+    if var temp = self.contact
+    {
+        temp.age = 42
+        XCTAssert(contact.age == 0)
+    }
   }
 
   func testAge() {
-    let temp = self.contact
-    temp!.age = 42
-    XCTAssert(contact.age == 42)
-    XCTAssert(contact2.age == 0)
+    if var temp = self.contact
+    {
+        temp.age = 42
+        XCTAssert(temp.age == 42)
+        XCTAssert(contact2.age == 0)
+    }
   }
 
   func testRender1() {

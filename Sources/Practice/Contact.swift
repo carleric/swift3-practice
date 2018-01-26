@@ -15,10 +15,10 @@ public enum NameDisplayStyle {
 	case initials
 }
 
-public class Contact: Person, CustomStringConvertible {
+public struct Contact: Person {
 	var firstName: String
 	var middleName: String?
-	var lastName: String 
+	var lastName: String
 	var fullName: String {
 		return self.toString()
 	}
@@ -34,29 +34,6 @@ public class Contact: Person, CustomStringConvertible {
 		self.middleName = middleName
 		self.lastName = lastName
 	}
-
-	public func toString(style: NameDisplayStyle = .firstmiddlelast) -> String {
-		switch style {
-			case .firstmiddlelast:
-				if let middleName = self.middleName {
-						return "\(self.firstName) \(middleName) \(self.lastName)" 
-					} else {
-						return "\(self.firstName) \(self.lastName)" 
-					}
-			case .lastfirst:
-				if let middleName = self.middleName {
-					return "\(self.lastName), \(self.firstName) \(middleName)"
-				} else {
-					return "\(self.lastName), \(self.firstName)"
-				}
-			case .initials:
-				if let middleName = self.middleName {
-					return "\(self.firstName.characters[self.firstName.startIndex])\(middleName.characters[middleName.startIndex])\(self.lastName.characters[self.lastName.startIndex])"
-				} else {
-					return "\(self.firstName.characters[self.firstName.startIndex])\(self.lastName.characters[self.lastName.startIndex])"
-				}
-		}
-	}
 }
 
 extension Contact: Comparable {
@@ -69,8 +46,33 @@ extension Contact: Comparable {
 	}
 }
 
+extension Contact: CustomStringConvertible {
+	public func toString(style: NameDisplayStyle = .firstmiddlelast) -> String {
+		switch style {
+			case .firstmiddlelast:
+				if let middleName = self.middleName {
+						return "\(self.firstName) \(middleName) \(self.lastName)"
+					} else {
+						return "\(self.firstName) \(self.lastName)"
+					}
+			case .lastfirst:
+				if let middleName = self.middleName {
+					return "\(self.lastName), \(self.firstName) \(middleName)"
+				} else {
+					return "\(self.lastName), \(self.firstName)"
+				}
+			case .initials:
+				if let middleName = self.middleName {
+					return "\(self.firstName[self.firstName.startIndex])\(middleName[middleName.startIndex])\(self.lastName[self.lastName.startIndex])"
+				} else {
+					return "\(self.firstName[self.firstName.startIndex])\(self.lastName[self.lastName.startIndex])"
+				}
+		}
+	}
+}
+
 extension String
-{   
+{
     func trim() -> String
     {
         return self.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
