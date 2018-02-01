@@ -48,7 +48,7 @@ extension Contact: Comparable {
 
 extension Contact: CustomStringConvertible {
 	public func toString(style: NameDisplayStyle = .firstmiddlelast) -> String {
-        var outString: String = ""
+    var outString: String = ""
 		switch style {
 			case .firstmiddlelast:
 				if let middleName = self.middleName {
@@ -63,13 +63,23 @@ extension Contact: CustomStringConvertible {
 					outString = "\(self.lastName), \(self.firstName)"
 				}
 			case .initials:
-				if let middleName = self.middleName {
-					outString = "\(self.firstName[self.firstName.startIndex])\(middleName[middleName.startIndex])\(self.lastName[self.lastName.startIndex])"
-				} else {
-					outString = "\(self.firstName[self.firstName.startIndex])\(self.lastName[self.lastName.startIndex])"
+        if  let middle = self.middleName?.uppercased().first,
+            let first = self.firstName.uppercased().first,
+            let last = self.lastName.uppercased().first
+        {
+						outString =  "\(first)\(middle)\(last)"
+        }
+        else
+            if let first = self.firstName.uppercased().first,
+               let last = self.lastName.uppercased().first
+        {
+						outString =  "\(first)\(last)"
 				}
-		}
-        return outString
+        else
+        {
+                outString =  ""
+        }
+			}
 	}
 }
 
