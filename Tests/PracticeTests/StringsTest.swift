@@ -11,7 +11,7 @@ class StringsTests: XCTestCase {
 	}
 
 	func testFilterAnagrams() {
-		let anagrams = self.strings.getAnagramsIn(strings:data1)
+		let anagrams = self.strings.getAnagramsIn2(strings:data1)
 		XCTAssert(anagrams.count == 3)
 		XCTAssert(anagrams.contains("aba"))
 		XCTAssert(anagrams.contains("toolloot"))

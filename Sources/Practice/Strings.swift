@@ -29,4 +29,15 @@ public class Strings {
 		}
 		return anagrams
 	}
+   
+   public func getAnagramsIn2(strings: [String]) -> [String] {
+      var anagrams = [String]()
+      for string in strings {
+         if (string == String(string.reversed())) {
+            anagrams.append(string)
+         }
+      }
+      return anagrams
+   }
+   
 }

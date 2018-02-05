@@ -28,4 +28,14 @@ class FibonacciTest : XCTestCase {
 		XCTAssert(self.fibonacci.atNBetter(5) == 5)
 		XCTAssert(self.fibonacci.atNBetter(6) == 8)
 	}
+   
+   func testAtNDynamic() {
+      XCTAssert(self.fibonacci.fibDynamic(0) == 0)
+      XCTAssert(self.fibonacci.fibDynamic(1) == 1)
+      XCTAssert(self.fibonacci.fibDynamic(2) == 1)
+      XCTAssert(self.fibonacci.fibDynamic(3) == 2)
+      XCTAssert(self.fibonacci.fibDynamic(4) == 3)
+      XCTAssert(self.fibonacci.fibDynamic(5) == 5)
+      XCTAssert(self.fibonacci.fibDynamic(6) == 8)
+   }
 }

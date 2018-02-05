@@ -2,29 +2,48 @@
 
 import Foundation
 
+func maxValueInArrayAfterOperations(arraySize: Int, operations: [(a: Int, b: Int, k: Int)]) -> Int
+{
+   //initialize array
+   var array = Array(repeating: 0, count: arraySize)
+   var max = 0
+   for operation in operations
+   {
+      //do operation
+      for i in operation.a-1...operation.b-1 {
+         array[i] += operation.k
+      }
+      
+      //calculate max
+      if var currentRowMax = array.first
+      {
+         for item in array {
+            if (item > currentRowMax)
+            {
+               currentRowMax = item
+            }
+         }
+         max = currentRowMax
+      }
+   }
+   return max
+}
+
 let input = readLine()!.components(separatedBy:" ").map{ Int($0)! }
 let n = input[0]
 let m = input[1]
-
-var max = 0
-
-//initialize
-var array: [Int] = [Int]()
-for i in 0..<n {
-	array.append(0)
-}
+var operations = [(Int, Int, Int)]()
 
 //operations
-for j in 0..<m {
-	let operation = readLine()!.components(separatedBy:" ").map{ Int($0)! }
-	let a = operation[0]
-	let b = operation[1]
-	let k = operation[2]
-
-	for i in a-1..<b-1 {
-		array[i] += k
-		max = array[i] > max ? array[i] : max
-	}
+for _ in 0..<m {
+   let operation = readLine()!.components(separatedBy:" ").map{ Int($0)! }
+   operations.append((operation[0], operation[1], operation[2]))
 }
 
+let max = maxValueInArrayAfterOperations(arraySize: n, operations: operations)
+
 print("\(max)")
+
+
+
+

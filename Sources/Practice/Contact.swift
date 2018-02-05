@@ -48,38 +48,39 @@ extension Contact: Comparable {
 
 extension Contact: CustomStringConvertible {
 	public func toString(style: NameDisplayStyle = .firstmiddlelast) -> String {
-    var outString: String = ""
-		switch style {
-			case .firstmiddlelast:
-				if let middleName = self.middleName {
-						outString = "\(self.firstName) \(middleName) \(self.lastName)"
-					} else {
-						outString = "\(self.firstName) \(self.lastName)"
-					}
-			case .lastfirst:
-				if let middleName = self.middleName {
-					outString = "\(self.lastName), \(self.firstName) \(middleName)"
-				} else {
-					outString = "\(self.lastName), \(self.firstName)"
-				}
-			case .initials:
+      var outString: String = ""
+      switch style {
+         case .firstmiddlelast:
+            if let middleName = self.middleName {
+                  outString = "\(self.firstName) \(middleName) \(self.lastName)"
+               } else {
+                  outString = "\(self.firstName) \(self.lastName)"
+               }
+         case .lastfirst:
+            if let middleName = self.middleName {
+               outString = "\(self.lastName), \(self.firstName) \(middleName)"
+            } else {
+               outString = "\(self.lastName), \(self.firstName)"
+            }
+         case .initials:
         if  let middle = self.middleName?.uppercased().first,
             let first = self.firstName.uppercased().first,
             let last = self.lastName.uppercased().first
         {
-						outString =  "\(first)\(middle)\(last)"
+                  outString =  "\(first)\(middle)\(last)"
         }
         else
             if let first = self.firstName.uppercased().first,
                let last = self.lastName.uppercased().first
         {
-						outString =  "\(first)\(last)"
-				}
+                  outString =  "\(first)\(last)"
+            }
         else
         {
                 outString =  ""
         }
-			}
+      }
+      return outString
 	}
 }
 
