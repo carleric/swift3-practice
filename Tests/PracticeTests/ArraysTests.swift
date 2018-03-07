@@ -79,4 +79,10 @@ class ArraysTests : XCTestCase {
 		let outArray = self.arrays.walkMatrixClockwise(&matrix)
 		XCTAssert(outArray == [1, 2, 3, 4, 5, 6, 7, 8, 9])
 	}
+   
+   func testWalkMatrixClockwise2() {
+      let matrix = [[1, 2, 3], [8, 9, 4], [7, 6, 5]]
+      let outArray = self.arrays.walkMatrixClockwise2(matrix)
+      XCTAssert(outArray == [1, 2, 3, 4, 5, 6, 7, 8, 9])
+   }
 }

@@ -138,16 +138,9 @@ class Arrays {
 		}
 	 }
 
-	 //given a sequence of ints and an array of ints (factors)
-	 //return factor with longest continuous sequence of factors
-	 func factorWithLongest(sequence: [Int], factors: [Int]) {
-
-	 }
-
-
 	 func walkMatrixClockwise(_ matrix: inout Array<Array<Int>>) -> Array<Int>
 	 {
-		  var outArray = [Int]()
+       var outArray = [Int]()
 	    var operationIndex = 0
 	    var hasMore = true
 	    while (hasMore)
@@ -185,7 +178,7 @@ class Arrays {
 	        for item in matrix[0]
 	        {
 	            print(item)
-							outArray.append(item)
+               outArray.append(item)
 	        }
 	        matrix.remove(at: 0)
 	        return true
@@ -203,7 +196,7 @@ class Arrays {
 	        {
 	            let item = matrix[matrix.count - 1][index]
 	            print(item)
-							outArray.append(item)
+               outArray.append(item)
 	        }
 	        matrix.remove(at: matrix.count - 1)
 	        return true
@@ -220,9 +213,9 @@ class Arrays {
 	        for index in 0..<matrix.count
 	        {
 	            var row = matrix[index]
-							var item = row[row.count - 1]
+               let item = row[row.count - 1]
 	            print(item)
-							outArray.append(item)
+               outArray.append(item)
 	            row.remove(at: row.count - 1)
 	            matrix[index] = row
 	        }
@@ -240,9 +233,9 @@ class Arrays {
 	        for index in stride(from: matrix.count - 1, through: 0, by: -1)
 	        {
 	            var row = matrix[index]
-							var item = row[0]
+               let item = row[0]
 	            print(item)
-							outArray.append(item)
+               outArray.append(item)
 	            row.remove(at: 0)
 	            matrix[index] = row
 	        }
@@ -252,4 +245,37 @@ class Arrays {
 	        return false
 	    }
 	}
+   
+   //2nd try
+   func walkMatrixClockwise2(_ matrix: [[Int]]) -> [Int]
+   {
+      var newMatrix = matrix
+      var outArray = [Int]()
+      while !newMatrix.isEmpty
+      {
+         outArray += newMatrix.removeFirst()
+         newMatrix = transposeMatrix(newMatrix)
+      }
+      return outArray
+   }
+   
+   func transposeMatrix(_ matrix: [[Int]]) -> [[Int]]
+   {
+      let numRows = matrix.count
+      var newMatrix = [[Int]]()
+      
+      if let numCols = matrix.first?.count
+      {
+         for colIndex in stride(from: numCols-1, through: 0, by: -1)
+         {
+            var newRow = [Int]()
+            for rowIndex in 0..<numRows
+            {
+               newRow.append(matrix[rowIndex][colIndex])
+            }
+            newMatrix.append(newRow)
+         }
+      }
+      return newMatrix
+   }
 }

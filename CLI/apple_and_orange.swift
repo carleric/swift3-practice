@@ -6,9 +6,9 @@ func readLineToIntTuple() -> (Int, Int) {
 	return (st[0], st[1])	
 }
 
-let (s, t) = readLineToIntTuple()
-let (a, b) = readLineToIntTuple()
-let (m, n) = readLineToIntTuple()
+let (s, t) = readLineToIntTuple() //edges of house
+let (a, b) = readLineToIntTuple() //points of apple tree, orange tree
+let (m, n) = readLineToIntTuple() //# of apples, # of oranges fallen
 
 //distances
 let apple_to_house = s - a
@@ -21,7 +21,9 @@ var oranges_on_house = 0
 //apples
 let appledrops = readLine()!.components(separatedBy:" ").map{ Int($0)!}
 for i in 0..<m {
-	if (appledrops[i] + a) >= s {
+   let dropLocation = appledrops[i] + a
+	if (dropLocation >= s && dropLocation <= t)
+   {
 		apples_on_house += 1
 	}
 }
@@ -29,7 +31,9 @@ for i in 0..<m {
 //oranges
 let orangedrops = readLine()!.components(separatedBy:" ").map{ Int($0)!}
 for i in 0..<n {
-	if (orangedrops[i] + b) <= t {
+   let dropLocation = orangedrops[i] + b
+	if (dropLocation <= t && dropLocation >= s)
+   {
 		oranges_on_house += 1
 	}
 }
