@@ -10,32 +10,32 @@ class FibonacciTest : XCTestCase {
 	}
 
 	func testAtN() {
-		XCTAssert(self.fibonacci.atN(0) == 0)
-		XCTAssert(self.fibonacci.atN(1) == 1)
-		XCTAssert(self.fibonacci.atN(2) == 1)
-		XCTAssert(self.fibonacci.atN(3) == 2)
-		XCTAssert(self.fibonacci.atN(4) == 3)
-		XCTAssert(self.fibonacci.atN(5) == 5)
-		XCTAssert(self.fibonacci.atN(6) == 8)
+		XCTAssertEqual(self.fibonacci.atN(0), 0)
+      XCTAssertEqual(self.fibonacci.atN(1), 1)
+      XCTAssertEqual(self.fibonacci.atN(2), 1)
+      XCTAssertEqual(self.fibonacci.atN(3), 2)
+      XCTAssertEqual(self.fibonacci.atN(4), 3)
+      XCTAssertEqual(self.fibonacci.atN(5), 5)
+      XCTAssertEqual(self.fibonacci.atN(6), 8)
 	}
 
 	func testAtNBetter() {
-		XCTAssert(self.fibonacci.atNBetter(0) == 0)
-		XCTAssert(self.fibonacci.atNBetter(1) == 1)
-		XCTAssert(self.fibonacci.atNBetter(2) == 1)
-		XCTAssert(self.fibonacci.atNBetter(3) == 2)
-		XCTAssert(self.fibonacci.atNBetter(4) == 3)
-		XCTAssert(self.fibonacci.atNBetter(5) == 5)
-		XCTAssert(self.fibonacci.atNBetter(6) == 8)
+      XCTAssertEqual(self.fibonacci.atNBetter(0), 0)
+      XCTAssertEqual(self.fibonacci.atNBetter(1), 1)
+      XCTAssertEqual(self.fibonacci.atNBetter(2), 1)
+      XCTAssertEqual(self.fibonacci.atNBetter(3), 2)
+      XCTAssertEqual(self.fibonacci.atNBetter(4), 3)
+      XCTAssertEqual(self.fibonacci.atNBetter(5), 5)
+      XCTAssertEqual(self.fibonacci.atNBetter(6), 8)
 	}
    
    func testAtNDynamic() {
-      XCTAssert(self.fibonacci.fibDynamic(0) == 0)
-      XCTAssert(self.fibonacci.fibDynamic(1) == 1)
-      XCTAssert(self.fibonacci.fibDynamic(2) == 1)
-      XCTAssert(self.fibonacci.fibDynamic(3) == 2)
-      XCTAssert(self.fibonacci.fibDynamic(4) == 3)
-      XCTAssert(self.fibonacci.fibDynamic(5) == 5)
-      XCTAssert(self.fibonacci.fibDynamic(6) == 8)
+      XCTAssertEqual(self.fibonacci.atNDynamic(0), 0)
+      XCTAssertEqual(self.fibonacci.atNDynamic(1), 1)
+      XCTAssertEqual(self.fibonacci.atNDynamic(2), 1)
+      XCTAssertEqual(self.fibonacci.atNDynamic(3), 2)
+      XCTAssertEqual(self.fibonacci.atNDynamic(4), 3)
+      XCTAssertEqual(self.fibonacci.atNDynamic(5), 5)
+      XCTAssertEqual(self.fibonacci.atNDynamic(6), 8)
    }
 }

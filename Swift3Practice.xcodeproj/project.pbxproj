@@ -21,6 +21,11 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		D331852C210CF2C5002C7FAC /* LinkedList_LeetCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D331852A210CF2BA002C7FAC /* LinkedList_LeetCode.swift */; };
+		D331852E210CF568002C7FAC /* LinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D331852D210CF568002C7FAC /* LinkedListTests.swift */; };
+		D3318531210D29B2002C7FAC /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D331852F210D2721002C7FAC /* LinkedList.swift */; };
+		D3318533210E52F7002C7FAC /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3318532210E52F7002C7FAC /* Dynamic.swift */; };
+		D3318536210E556B002C7FAC /* DynamicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3318534210E5420002C7FAC /* DynamicTests.swift */; };
 		OBJ_32 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_38 /* ArraysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* ArraysTests.swift */; };
 		OBJ_39 /* BinaryTreeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* BinaryTreeTest.swift */; };
@@ -55,6 +60,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D331852A210CF2BA002C7FAC /* LinkedList_LeetCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList_LeetCode.swift; sourceTree = "<group>"; };
+		D331852D210CF568002C7FAC /* LinkedListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedListTests.swift; sourceTree = "<group>"; };
+		D331852F210D2721002C7FAC /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
+		D3318532210E52F7002C7FAC /* Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
+		D3318534210E5420002C7FAC /* DynamicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTests.swift; sourceTree = "<group>"; };
 		OBJ_10 /* BinaryTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTree.swift; sourceTree = "<group>"; };
 		OBJ_11 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		OBJ_12 /* Divisors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Divisors.swift; sourceTree = "<group>"; };
@@ -109,6 +119,8 @@
 				OBJ_20 /* DivisorsTest.swift */,
 				OBJ_21 /* FibonacciTest.swift */,
 				OBJ_22 /* StringsTest.swift */,
+				D331852D210CF568002C7FAC /* LinkedListTests.swift */,
+				D3318534210E5420002C7FAC /* DynamicTests.swift */,
 			);
 			name = PracticeTests;
 			path = Tests/PracticeTests;
@@ -151,6 +163,9 @@
 				OBJ_12 /* Divisors.swift */,
 				OBJ_13 /* Fibonacci.swift */,
 				OBJ_14 /* Strings.swift */,
+				D331852A210CF2BA002C7FAC /* LinkedList_LeetCode.swift */,
+				D331852F210D2721002C7FAC /* LinkedList.swift */,
+				D3318532210E52F7002C7FAC /* Dynamic.swift */,
 			);
 			name = Practice;
 			path = Sources/Practice;
@@ -251,6 +266,8 @@
 				OBJ_39 /* BinaryTreeTest.swift in Sources */,
 				OBJ_40 /* ContactTest.swift in Sources */,
 				OBJ_41 /* DivisorsTest.swift in Sources */,
+				D331852E210CF568002C7FAC /* LinkedListTests.swift in Sources */,
+				D3318536210E556B002C7FAC /* DynamicTests.swift in Sources */,
 				OBJ_42 /* FibonacciTest.swift in Sources */,
 				OBJ_43 /* StringsTest.swift in Sources */,
 			);
@@ -263,9 +280,12 @@
 				OBJ_52 /* Arrays.swift in Sources */,
 				OBJ_53 /* BinaryTree.swift in Sources */,
 				OBJ_54 /* Contact.swift in Sources */,
+				D3318533210E52F7002C7FAC /* Dynamic.swift in Sources */,
 				OBJ_55 /* Divisors.swift in Sources */,
 				OBJ_56 /* Fibonacci.swift in Sources */,
 				OBJ_57 /* Strings.swift in Sources */,
+				D3318531210D29B2002C7FAC /* LinkedList.swift in Sources */,
+				D331852C210CF2C5002C7FAC /* LinkedList_LeetCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
