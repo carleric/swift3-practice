@@ -21,6 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		D32016442117B43F002F6468 /* TreesAndGraphs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32016422117B425002F6468 /* TreesAndGraphs.swift */; };
+		D32016482117CFCC002F6468 /* TreesAndGraphsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32016452117CED3002F6468 /* TreesAndGraphsTests.swift */; };
 		D331852C210CF2C5002C7FAC /* LinkedList_LeetCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D331852A210CF2BA002C7FAC /* LinkedList_LeetCode.swift */; };
 		D331852E210CF568002C7FAC /* LinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D331852D210CF568002C7FAC /* LinkedListTests.swift */; };
 		D3318531210D29B2002C7FAC /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D331852F210D2721002C7FAC /* LinkedList.swift */; };
@@ -60,6 +62,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D32016422117B425002F6468 /* TreesAndGraphs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreesAndGraphs.swift; sourceTree = "<group>"; };
+		D32016452117CED3002F6468 /* TreesAndGraphsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreesAndGraphsTests.swift; sourceTree = "<group>"; };
 		D331852A210CF2BA002C7FAC /* LinkedList_LeetCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList_LeetCode.swift; sourceTree = "<group>"; };
 		D331852D210CF568002C7FAC /* LinkedListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedListTests.swift; sourceTree = "<group>"; };
 		D331852F210D2721002C7FAC /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 				OBJ_22 /* StringsTest.swift */,
 				D331852D210CF568002C7FAC /* LinkedListTests.swift */,
 				D3318534210E5420002C7FAC /* DynamicTests.swift */,
+				D32016452117CED3002F6468 /* TreesAndGraphsTests.swift */,
 			);
 			name = PracticeTests;
 			path = Tests/PracticeTests;
@@ -166,6 +171,7 @@
 				D331852A210CF2BA002C7FAC /* LinkedList_LeetCode.swift */,
 				D331852F210D2721002C7FAC /* LinkedList.swift */,
 				D3318532210E52F7002C7FAC /* Dynamic.swift */,
+				D32016422117B425002F6468 /* TreesAndGraphs.swift */,
 			);
 			name = Practice;
 			path = Sources/Practice;
@@ -263,6 +269,7 @@
 			buildActionMask = 0;
 			files = (
 				OBJ_38 /* ArraysTests.swift in Sources */,
+				D32016482117CFCC002F6468 /* TreesAndGraphsTests.swift in Sources */,
 				OBJ_39 /* BinaryTreeTest.swift in Sources */,
 				OBJ_40 /* ContactTest.swift in Sources */,
 				OBJ_41 /* DivisorsTest.swift in Sources */,
@@ -285,6 +292,7 @@
 				OBJ_56 /* Fibonacci.swift in Sources */,
 				OBJ_57 /* Strings.swift in Sources */,
 				D3318531210D29B2002C7FAC /* LinkedList.swift in Sources */,
+				D32016442117B43F002F6468 /* TreesAndGraphs.swift in Sources */,
 				D331852C210CF2C5002C7FAC /* LinkedList_LeetCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

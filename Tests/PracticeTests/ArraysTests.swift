@@ -103,6 +103,9 @@ class ArraysTests : XCTestCase {
       
       let in3 = [7,6,4,3,1]
       XCTAssertEqual(self.arrays.maxProfit(in3), 0)
+      
+      let in4 = [7,1,5,6,3,1,2,5]
+      XCTAssertEqual(self.arrays.maxProfit(in4), 9)
    }
    
    func testRotate() {

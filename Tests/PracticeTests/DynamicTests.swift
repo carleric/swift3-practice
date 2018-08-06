@@ -67,9 +67,19 @@ class DynamicTests: XCTestCase {
       XCTAssert(found.contains([0, 1, 2]))
    }
    
-   func testMaxProfit() {
-      XCTAssertEqual(Dynamic().maxProfit([7,1,5,3,6,4]), 5)
-      XCTAssertEqual(Dynamic().maxProfit([7,6,4,3,1]), 0)
+   func testMaxProfitOneTransaction() {
+      XCTAssertEqual(Dynamic().maxProfitOneTransaction([7,1,5,3,6,4]), 5)
+      XCTAssertEqual(Dynamic().maxProfitOneTransaction([7,6,4,3,1]), 0)
+   }
+   
+   func testMaxProfitMultiTransaction() {
+      XCTAssertEqual(Dynamic().maxProfitMultiTransaction([7,1,5,3,6,4]), 7)
+      XCTAssertEqual(Dynamic().maxProfitMultiTransaction([7,6,4,3,1]), 0)
+   }
+   
+   func testMaxProfitWithCooldown() {
+      XCTAssertEqual(Dynamic().maxProfitWithCooldown([]), 0)
+      XCTAssertEqual(Dynamic().maxProfitWithCooldown([1,2,3,0,2]), 3)
    }
    
    func testMaxSubArray() {
@@ -79,5 +89,91 @@ class DynamicTests: XCTestCase {
    func testRob() {
       XCTAssertEqual(Dynamic().rob([9, 0, 0, 9]), 18)
       XCTAssertEqual(Dynamic().rob([0]), 0)
+   }
+   
+   func testGetPerms2() {
+      //// at -> at, ta
+      let perms = Dynamic().getPerms("at")
+      XCTAssertEqual(perms.count, 2)
+      XCTAssert(perms.contains("at"))
+      XCTAssert(perms.contains("ta"))
+   }
+   
+   func testGetPerms3() {
+      //// cat -> tca, cta, cat, tac, atc, act
+      let perms = Dynamic().getPerms("cat")
+      XCTAssertEqual(perms.count, 6)
+      XCTAssert(perms.contains("cat"))
+      XCTAssert(perms.contains("tca"))
+      XCTAssert(perms.contains("cta"))
+      XCTAssert(perms.contains("tac"))
+      XCTAssert(perms.contains("atc"))
+      XCTAssert(perms.contains("act"))
+   }
+   
+   func testGetCountPerms() {
+      XCTAssertEqual(Dynamic().getCountPerms("cat"), 6)
+      XCTAssertEqual(Dynamic().getCountPerms("catd"), 24)
+      XCTAssertEqual(Dynamic().getCountPerms("catdo"), 120)
+   }
+   
+   func testChange1() {
+      XCTAssertEqual(Dynamic().change(4, [1 ,2, 4]), 4)
+   }
+   
+   func testChange2() {
+      XCTAssertEqual(Dynamic().change(50, [1 ,5, 10, 25]), 49)
+   }
+   
+   func testChange3() {
+      XCTAssertEqual(Dynamic().change(0, [7]), 1)
+   }
+   
+   func testChange4() {
+      XCTAssertEqual(Dynamic().change(0, []), 1)
+   }
+   
+   func testChangeRecursive1() {
+      XCTAssertEqual(Dynamic().changeRecursive(4, [1 ,2, 4], 0), 4)
+   }
+   
+   func testChangeRecursive2() {
+      XCTAssertEqual(Dynamic().changeRecursive2(4, [1 ,2, 4]), 4)
+   }
+   
+   func testMaxProduct() {
+      XCTAssertEqual(Dynamic().maxProduct([2, 3, -2, 4]), 6)
+   }
+   
+   func testMaxProductWithNeg() {
+      XCTAssertEqual(Dynamic().maxProduct([-2]), -2)
+   }
+   
+   func testMaxProductWith2Neg() {
+      XCTAssertEqual(Dynamic().maxProduct([-2, 3, -4]), 24)
+   }
+   
+   func testMaxProductWith3Neg() {
+      XCTAssertEqual(Dynamic().maxProduct([-2, 3, -4, 0, 3, 2]), 24)
+   }
+   
+   func testMaxProductWith2NegAnd0() {
+      XCTAssertEqual(Dynamic().maxProduct([-2, 0, -1]), 0)
+   }
+   
+   func testMaxProductWith02() {
+      XCTAssertEqual(Dynamic().maxProduct([0, 2]), 2)
+   }
+   
+   func testMaxProductWith3m14() {
+      XCTAssertEqual(Dynamic().maxProduct([3, -1, 4]), 4)
+   }
+   
+   func testMaxProductWith3Neg2() {
+      XCTAssertEqual(Dynamic().maxProduct([-4,-3,-2]), 12)
+   }
+   
+   func testMaxProductWith4Neg() {
+      XCTAssertEqual(Dynamic().maxProduct([-1, -2, -9, -6]), 108)
    }
 }
